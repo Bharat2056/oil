@@ -35,233 +35,232 @@
 
         .img-card {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-radius: 2rem;
+            border-radius: 1.5rem;
             overflow: hidden;
-            border: 8px solid white;
-            background-color: #f3f4f6; /* Gray-100 placeholder */
+            border: 4px solid white;
+            background-color: #f3f4f6; 
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
+        @media (min-width: 768px) {
+            .img-card { border-radius: 2rem; border-width: 8px; }
+        }
 
-        /* Large text for senior readability */
-        p, label, input { font-size: 1.125rem; }
+        /* Floating Buttons Pulse */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-whatsapp-float {
+            animation: pulse-green 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <!-- Header -->
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-orange-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="bg-burnt-orange p-2 rounded-xl">
-                    <svg class="text-white w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.98 7.98 0 01-2.343 5.657z"></path></svg>
+                <div class="bg-burnt-orange p-1.5 md:p-2 rounded-lg md:rounded-xl">
+                    <svg class="text-white w-5 h-5 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.98 7.98 0 01-2.343 5.657z"></path></svg>
                 </div>
-                <span class="text-3xl font-black tracking-tighter text-burnt-orange">SILVER<span class="text-rich-gold">6</span></span>
+                <span class="text-xl md:text-3xl font-black tracking-tighter text-burnt-orange">SILVER<span class="text-rich-gold">6</span></span>
             </div>
-            <a href="#checkout" class="bg-burnt-orange text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-orange-700 transition-all shadow-lg hover:shadow-orange-200">
+            <a href="#checkout" class="bg-burnt-orange text-white px-4 py-2 md:px-8 md:py-3 rounded-full font-bold text-sm md:text-lg hover:bg-orange-700 transition-all shadow-lg">
                 अर्डर गर्नुहोस्
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-12 px-4 hero-gradient">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-900 px-5 py-2 rounded-full font-bold text-base">
+    <section class="pt-24 md:pt-32 pb-12 px-4 hero-gradient">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="space-y-6 md:space-y-8 text-center md:text-left order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-900 px-4 py-1.5 md:px-5 md:py-2 rounded-full font-bold text-sm md:text-base">
                     <span class="bg-orange-500 w-2 h-2 rounded-full animate-pulse"></span>
                     नेपालको नम्बर १ आयुर्वेदिक पेन रिलिफ आयल
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900">
-                    बुढेसकालको जोर्नी दुखाइलाई <br />
+                <h1 class="text-3xl sm:text-4xl md:text-7xl font-extrabold leading-tight text-gray-900">
+                    बुढेसकालको जोर्नी दुखाइलाई <br class="hidden md:block" />
                     <span class="text-burnt-orange italic">अब सधैंका लागि बिदाइ!</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
+                <p class="text-lg md:text-2xl text-gray-700 leading-relaxed font-medium">
                     सिल्भर ६: १००% शुद्ध जडिबुटीको तातोपना, जसले ३ दिनभित्रै तपाईंको कम्मर, घुँडा र नसाको दुखाइमा चमत्कारिक राहत दिन्छ।
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-                    <a href="#checkout" class="bg-burnt-orange text-white text-2xl px-12 py-5 rounded-2xl font-black hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#checkout" class="bg-burnt-orange text-white text-xl md:text-2xl px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
                         अहिले नै मगाउनुहोस्
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-8 text-lg text-gray-600 font-bold">
-                    <div class="flex items-center gap-2 text-green-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> १००% प्राकृतिक</div>
-                    <div class="flex items-center gap-2 text-orange-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> तुरुन्तै काम गर्ने</div>
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 text-base md:text-lg text-gray-600 font-bold">
+                    <div class="flex items-center gap-2 text-green-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> १००% प्राकृतिक</div>
+                    <div class="flex items-center gap-2 text-orange-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> तुरुन्तै काम गर्ने</div>
                 </div>
             </div>
-            <div class="relative">
-                <div class="img-card relative bg-orange-200 aspect-[4/5]">
-                    <!-- Place Your Hero Image Here -->
+            <div class="relative order-1 md:order-2 px-4 md:px-0">
+                <div class="img-card relative bg-orange-200 aspect-[4/5] max-w-[400px] mx-auto md:max-w-none">
                     <img src="/img/heroimg.png" alt="Silver6 Product" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 flex items-center justify-center text-orange-800 font-bold pointer-events-none opacity-50">Product Image</div>
                 </div>
-                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-2xl border-4 border-orange-500 max-w-[200px] text-center rotate-3 z-10">
-                    <p class="text-xs font-black text-gray-400 uppercase">बचत गर्नुहोस्</p>
-                    <p class="text-3xl font-black text-burnt-orange">२०% छुट</p>
+                <div class="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-2xl border-2 md:border-4 border-orange-500 max-w-[140px] md:max-w-[200px] text-center rotate-3 z-10">
+                    <p class="text-[10px] md:text-xs font-black text-gray-400 uppercase">बचत गर्नुहोस्</p>
+                    <p class="text-xl md:text-3xl font-black text-burnt-orange">२०% छुट</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Icons / Authenticity Section -->
-    <section class="py-12 bg-white border-y border-orange-50">
+    <section class="py-8 md:py-12 bg-white border-y border-orange-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="flex flex-col items-center text-center space-y-3">
-                    <div class="bg-orange-50 p-4 rounded-full">
-                        <svg class="w-8 h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+                    <div class="bg-orange-50 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
                     </div>
-                    <p class="font-bold text-gray-800">ISO प्रमाणित</p>
+                    <p class="font-bold text-sm md:text-base text-gray-800">ISO प्रमाणित</p>
                 </div>
-                <div class="flex flex-col items-center text-center space-y-3">
-                    <div class="bg-orange-50 p-4 rounded-full">
-                        <svg class="w-8 h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.465l-2.327-.465a2 2 0 00-1.022.547l-1.022 1.022a2 2 0 000 2.828l1.022 1.022a2 2 0 002.828 0l1.022-1.022a2 2 0 00.547-1.022l.465-2.327a4 4 0 01.465-2.547l.337-.675a6 6 0 00.517-3.86l-.477-2.387a2 2 0 00-.547-1.022L12 3l-1.022 1.022a2 2 0 00-.547 1.022l-.465 2.327a4 4 0 01-.465 2.547l-.337.675a6 6 0 00-.517 3.86l.477 2.387a2 2 0 00.547 1.022L12 21l1.022-1.022z"></path></svg>
+                <div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+                    <div class="bg-orange-50 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.465l-2.327-.465a2 2 0 00-1.022.547l-1.022 1.022a2 2 0 000 2.828l1.022 1.022a2 2 0 002.828 0l1.022-1.022a2 2 0 00.547-1.022l.465-2.327a4 4 0 01.465-2.547l.337-.675a6 6 0 00.517-3.86l-.477-2.387a2 2 0 00-.547-1.022L12 3l-1.022 1.022a2 2 0 00-.547 1.022l-.465 2.327a4 4 0 01-.465 2.547l-.337.675a6 6 0 00-.517 3.86l.477 2.387a2 2 0 00.547 1.022L12 21l1.022-1.022z"></path></svg>
                     </div>
-                    <p class="font-bold text-gray-800">१००% हर्बल</p>
+                    <p class="font-bold text-sm md:text-base text-gray-800">१००% हर्बल</p>
                 </div>
-                <div class="flex flex-col items-center text-center space-y-3">
-                    <div class="bg-orange-50 p-4 rounded-full">
-                        <svg class="w-8 h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                <div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+                    <div class="bg-orange-50 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                     </div>
-                    <p class="font-bold text-gray-800">GMP प्रमाणित</p>
+                    <p class="font-bold text-sm md:text-base text-gray-800">GMP प्रमाणित</p>
                 </div>
-                <div class="flex flex-col items-center text-center space-y-3">
-                    <div class="bg-orange-50 p-4 rounded-full">
-                        <svg class="w-8 h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+                    <div class="bg-orange-50 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <p class="font-bold text-gray-800">शुद्ध आयुर्वेदिक</p>
+                    <p class="font-bold text-sm md:text-base text-gray-800">शुद्ध आयुर्वेदिक</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Silver6 for Seniors -->
-    <section class="py-24 bg-gray-50 px-4">
-        <div class="max-w-4xl mx-auto text-center space-y-10">
-            <h2 class="text-4xl md:text-5xl font-black leading-tight">
+    <section class="py-16 md:py-24 bg-gray-50 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-8 md:space-y-10">
+            <h2 class="text-3xl md:text-5xl font-black leading-tight">
                 "नाति-नातिनीसँग खेल्ने र रमाइलो गर्ने इच्छा अब अधुरो रहने छैन"
             </h2>
-            <div class="img-card aspect-video bg-orange-100 mb-12">
-                 <!-- Place Your Senior Lifestyle Image Here -->
+            <div class="img-card aspect-video bg-orange-100 mb-8 md:mb-12">
                  <img src="/img/seniors.png" alt="Happy Seniors" class="w-full h-full object-cover">
-                 <div class="absolute inset-0 flex items-center justify-center text-orange-800 font-bold pointer-events-none opacity-50">Happy Seniors Image</div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <div class="bg-white p-8 rounded-3xl border border-orange-100 shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4 text-burnt-orange">बिहानीको कक्रक्क हुने समस्या?</h3>
-                    <p class="text-gray-600">बिहान उठ्दा घुँडा र कम्मर सिधा गर्न गाह्रो हुन्छ? सिल्भर ६ लगाएको १० मिनेटमै शरीर हल्का र लचिलो हुन्छ।</p>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-orange-100 shadow-sm">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 text-burnt-orange">बिहानीको कक्रक्क हुने समस्या?</h3>
+                    <p class="text-gray-600 text-base md:text-lg">बिहान उठ्दा घुँडा र कम्मर सिधा गर्न गाह्रो हुन्छ? सिल्भर ६ लगाएको १० मिनेटमै शरीर हल्का र लचिलो हुन्छ।</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-orange-100 shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4 text-burnt-orange">नसा च्यापिएको दुखाइ?</h3>
-                    <p class="text-gray-600">हाम्रो विशेष 'वार्म थेरापी' नसाको गहिराइसम्म पुगेर रक्तसञ्चार सुधार्छ र पुरानो दुखाइ जरैदेखि कम गर्छ।</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-orange-100 shadow-sm">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 text-burnt-orange">नसा च्यापिएको दुखाइ?</h3>
+                    <p class="text-gray-600 text-base md:text-lg">हाम्रो विशेष 'वार्म थेरापी' नसाको गहिराइसम्म पुगेर रक्तसञ्चार सुधार्छ र पुरानो दुखाइ जरैदेखि कम गर्छ।</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ingredients Section -->
-    <section class="py-24 bg-white px-4">
+    <section class="py-16 md:py-24 bg-white px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-4xl font-black">शुद्ध आयुर्वेदिक शक्ति</h2>
-                <p class="text-xl text-gray-600">कुनै केमिकल छैन, मात्र प्रकृतिको उपचार।</p>
+            <div class="text-center mb-12 md:mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl font-black">शुद्ध आयुर्वेदिक शक्ति</h2>
+                <p class="text-lg md:text-xl text-gray-600">कुनै केमिकल छैन, मात्र प्रकृतिको उपचार।</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center space-y-6">
-                    <div class="w-full aspect-square rounded-full border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+                <div class="text-center space-y-4 md:space-y-6">
+                    <div class="w-48 h-48 md:w-full md:aspect-square mx-auto rounded-full border-4 md:border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
                         <img src="/img/ginger.png" alt="Ginger" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-2xl font-bold">अदुवा (Zingiber)</h4>
-                    <p class="text-gray-500">यसले सुन्निएको कम गर्छ र दुखाइलाई तुरुन्तै रोक्छ।</p>
+                    <h4 class="text-xl md:text-2xl font-bold">अदुवा (Zingiber)</h4>
+                    <p class="text-gray-500 text-base md:text-lg">यसले सुन्निएको कम गर्छ र दुखाइलाई तुरुन्तै रोक्छ।</p>
                 </div>
-                <div class="text-center space-y-6">
-                    <div class="w-full aspect-square rounded-full border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
+                <div class="text-center space-y-4 md:space-y-6">
+                    <div class="w-48 h-48 md:w-full md:aspect-square mx-auto rounded-full border-4 md:border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
                          <img src="/img/pepper.png" alt="Pepper" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-2xl font-bold">मरिच (Black Pepper)</h4>
-                    <p class="text-gray-500">यसले तेलको तातोपनालाई शरीरको भित्रसम्म पुर्‍याउँछ।</p>
+                    <h4 class="text-xl md:text-2xl font-bold">मरिच (Black Pepper)</h4>
+                    <p class="text-gray-500 text-base md:text-lg">यसले तेलको तातोपनालाई शरीरको भित्रसम्म पुर्‍याउँछ।</p>
                 </div>
-                <div class="text-center space-y-6">
-                    <div class="w-full aspect-square rounded-full border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
+                <div class="text-center space-y-4 md:space-y-6 sm:col-span-2 md:col-span-1">
+                    <div class="w-48 h-48 md:w-full md:aspect-square mx-auto rounded-full border-4 md:border-8 border-orange-50 overflow-hidden bg-gray-100 relative">
                          <img src="/img/warm.png" alt="Wintergreen" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-2xl font-bold">विन्टरग्रिन (Gandhapura)</h4>
-                    <p class="text-gray-500">यसले नसालाई शान्त बनाउँछ र शीतल राहत दिन्छ।</p>
+                    <h4 class="text-xl md:text-2xl font-bold">विन्टरग्रिन (Gandhapura)</h4>
+                    <p class="text-gray-500 text-base md:text-lg">यसले नसालाई शान्त बनाउँछ र शीतल राहत दिन्छ।</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How to Use Section -->
-    <section class="py-24 bg-orange-50/20 px-4">
+    <section class="py-16 md:py-24 bg-orange-50/20 px-4">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-4xl font-black">सिल्भर ६ कसरी प्रयोग गर्ने?</h2>
-                <p class="text-xl text-gray-600">राम्रो नतिजाको लागि यी ४ सजिला चरणहरू अपनाउनुहोस्।</p>
+            <div class="text-center mb-12 md:mb-16 space-y-4">
+                <h2 class="text-3xl md:text-4xl font-black">सिल्भर ६ कसरी प्रयोग गर्ने?</h2>
+                <p class="text-lg md:text-xl text-gray-600">राम्रो नतिजाको लागि यी ४ सजिला चरणहरू अपनाउनुहोस्।</p>
             </div>
-            <div class="grid md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-orange-100 relative">
-                    <div class="absolute -top-4 -left-4 bg-burnt-orange text-white w-10 h-10 rounded-full flex items-center justify-center font-black">१</div>
+                    <div class="absolute -top-3 -left-3 bg-burnt-orange text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black">१</div>
                     <div class="aspect-square bg-gray-50 rounded-2xl mb-6 overflow-hidden">
                         <img src="/img/st1.png" alt="Step 1" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-bold text-xl mb-2">थोपा लिनुहोस्</h4>
-                    <p class="text-gray-500 text-sm">केही थोपा तेल हत्केलामा वा सिधै दुखेको भागमा हाल्नुहोस्।</p>
+                    <h4 class="font-bold text-lg md:text-xl mb-2">थोपा लिनुहोस्</h4>
+                    <p class="text-gray-500 text-sm md:text-base">केही थोपा तेल हत्केलामा वा सिधै दुखेको भागमा हाल्नुहोस्।</p>
                 </div>
                 <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-orange-100 relative">
-                    <div class="absolute -top-4 -left-4 bg-burnt-orange text-white w-10 h-10 rounded-full flex items-center justify-center font-black">२</div>
+                    <div class="absolute -top-3 -left-3 bg-burnt-orange text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black">२</div>
                     <div class="aspect-square bg-gray-50 rounded-2xl mb-6 overflow-hidden">
                         <img src="/img/st2.png" alt="Step 2" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-bold text-xl mb-2">हल्का मालिस</h4>
-                    <p class="text-gray-500 text-sm">५-१० मिनेटसम्म दुखेको भागमा बिस्तारै मालिस गर्नुहोस्।</p>
+                    <h4 class="font-bold text-lg md:text-xl mb-2">हल्का मालिस</h4>
+                    <p class="text-gray-500 text-sm md:text-base">५-१० मिनेटसम्म दुखेको भागमा बिस्तारै मालिस गर्नुहोस्।</p>
                 </div>
                 <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-orange-100 relative">
-                    <div class="absolute -top-4 -left-4 bg-burnt-orange text-white w-10 h-10 rounded-full flex items-center justify-center font-black">३</div>
+                    <div class="absolute -top-3 -left-3 bg-burnt-orange text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black">३</div>
                     <div class="aspect-square bg-gray-50 rounded-2xl mb-6 overflow-hidden">
                         <img src="/img/st3.png" alt="Step 3" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-bold text-xl mb-2">तातोपना महसुस</h4>
-                    <p class="text-gray-500 text-sm">तेलको तातोपनाले मांसपेशी र नसालाई राहत दिएको महसुस गर्नुहोस्।</p>
+                    <h4 class="font-bold text-lg md:text-xl mb-2">तातोपना महसुस</h4>
+                    <p class="text-gray-500 text-sm md:text-base">तेलको तातोपनाले मांसपेशी र नसालाई राहत दिएको महसुस गर्नुहोस्।</p>
                 </div>
                 <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-orange-100 relative">
-                    <div class="absolute -top-4 -left-4 bg-burnt-orange text-white w-10 h-10 rounded-full flex items-center justify-center font-black">४</div>
+                    <div class="absolute -top-3 -left-3 bg-burnt-orange text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black">४</div>
                     <div class="aspect-square bg-gray-50 rounded-2xl mb-6 overflow-hidden">
                         <img src="/img/st4.png" alt="Step 4" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-bold text-xl mb-2">दैनिक २ पटक</h4>
-                    <p class="text-gray-500 text-sm">स्थायी राहतको लागि बिहान र बेलुका सुत्नु अघि प्रयोग गर्नुहोस्।</p>
+                    <h4 class="font-bold text-lg md:text-xl mb-2">दैनिक २ पटक</h4>
+                    <p class="text-gray-500 text-sm md:text-base">स्थायी राहतको लागि बिहान र बेलुका सुत्नु अघि प्रयोग गर्नुहोस्।</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-24 bg-orange-50/30 px-4">
+    <section class="py-16 md:py-24 bg-orange-50/30 px-4">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-black mb-12 text-center">तपाईंको मनमा लागेका केही प्रश्नहरू</h2>
-            <div class="space-y-6">
-                <div class="faq-item border-2 border-orange-100 bg-white rounded-3xl overflow-hidden transition-all">
-                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-8 text-left hover:bg-orange-50/50">
-                        <span class="font-bold text-xl">के यो तेल पुरानो बाथ रोगीका लागि उपयोगी छ?</span>
-                        <svg class="faq-icon w-6 h-6 text-orange-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            <h2 class="text-3xl md:text-4xl font-black mb-10 md:mb-12 text-center">तपाईंको मनमा लागेका केही प्रश्नहरू</h2>
+            <div class="space-y-4 md:space-y-6">
+                <div class="faq-item border-2 border-orange-100 bg-white rounded-2xl md:rounded-3xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-orange-50/50">
+                        <span class="font-bold text-lg md:text-xl">के यो तेल पुरानो बाथ रोगीका लागि उपयोगी छ?</span>
+                        <svg class="faq-icon w-5 h-5 md:w-6 md:h-6 text-orange-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="p-8 pt-0 text-gray-600 text-lg">
+                        <div class="p-6 md:p-8 pt-0 text-gray-600 text-base md:text-lg">
                             एकदमै! सिल्भर ६ विशेष गरी पुरानो जोर्नी दुखाइ र बाथ भएका बुवा-मुवाहरूका लागि बनाइएको हो। यसको तातोपनाले कडा भइसकेका जोर्नीहरूलाई खुकुलो बनाउन मद्दत गर्छ।
                         </div>
                     </div>
                 </div>
-                <div class="faq-item border-2 border-orange-100 bg-white rounded-3xl overflow-hidden transition-all">
-                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-8 text-left hover:bg-orange-50/50">
-                        <span class="font-bold text-xl">यसलाई कसरी प्रयोग गर्ने?</span>
-                        <svg class="faq-icon w-6 h-6 text-orange-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                <div class="faq-item border-2 border-orange-100 bg-white rounded-2xl md:rounded-3xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-orange-50/50">
+                        <span class="font-bold text-lg md:text-xl">यसलाई कसरी प्रयोग गर्ने?</span>
+                        <svg class="faq-icon w-5 h-5 md:w-6 md:h-6 text-orange-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="p-8 pt-0 text-gray-600 text-lg">
+                        <div class="p-6 md:p-8 pt-0 text-gray-600 text-base md:text-lg">
                             दुखेको भागमा केही थोपा तेल हालेर ५-१० मिनेटसम्म बिस्तारै मालिस गर्नुहोस्। राम्रो नतिजाको लागि सुत्नु अघि र बिहान उठ्ने बित्तिकै लगाउनुहोस्।
                         </div>
                     </div>
@@ -270,91 +269,100 @@
         </div>
     </section>
 
-    <!-- Order Form Section -->
-    <section id="checkout" class="py-24 bg-orange-100 px-4 scroll-mt-20">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-            <div class="bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl border-4 border-orange-500 relative">
-                <div class="absolute -top-10 left-10 bg-orange-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-xl">
+    <section id="checkout" class="py-16 md:py-24 bg-orange-100 px-4 scroll-mt-20">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div class="bg-white p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-2xl border-2 md:border-4 border-orange-500 relative order-2 md:order-1">
+                <div class="absolute -top-6 left-6 md:-top-10 md:left-10 bg-orange-500 text-white px-6 py-2 md:px-8 md:py-3 rounded-xl md:rounded-2xl font-black text-lg md:text-xl shadow-xl">
                     अहिले नै अर्डर गर्नुहोस्
                 </div>
                 
-                <form id="orderForm" class="space-y-8" onsubmit="event.preventDefault(); handleOrder();">
-                    <div class="space-y-6">
+                <form id="orderForm" class="space-y-6 md:space-y-8 mt-4 md:mt-0" onsubmit="event.preventDefault(); handleOrder();">
+                    <div class="space-y-4 md:space-y-6">
                         <div>
-                            <label class="block font-black text-gray-700 mb-3">तपाईंको पूरा नाम (Full Name)</label>
-                            <input type="text" required placeholder="उदा: राम बहादुर थापा" class="w-full px-6 py-5 rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-xl font-bold">
+                            <label class="block font-black text-gray-700 mb-2 md:mb-3 text-base md:text-lg">तपाईंको पूरा नाम (Full Name)</label>
+                            <input type="text" required placeholder="उदा: राम बहादुर थापा" class="w-full px-5 py-4 md:px-6 md:py-5 rounded-xl md:rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-lg md:text-xl font-bold">
                         </div>
                         <div>
-                            <label class="block font-black text-gray-700 mb-3">फोन नम्बर (Mobile Number)</label>
-                            <input type="tel" required placeholder="उदा: ९८XXXXXXXX" class="w-full px-6 py-5 rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-xl font-bold">
+                            <label class="block font-black text-gray-700 mb-2 md:mb-3 text-base md:text-lg">फोन नम्बर (Mobile Number)</label>
+                            <input type="tel" required placeholder="उदा: ९८XXXXXXXX" class="w-full px-5 py-4 md:px-6 md:py-5 rounded-xl md:rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-lg md:text-xl font-bold">
                         </div>
                         <div>
-                            <label class="block font-black text-gray-700 mb-3">डेलिभरी ठेगाना (Delivery Address)</label>
-                            <input type="text" required placeholder="तपाईंको घर नम्बर वा टोलको नाम" class="w-full px-6 py-5 rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-xl font-bold">
+                            <label class="block font-black text-gray-700 mb-2 md:mb-3 text-base md:text-lg">डेलिभरी ठेगाना (Delivery Address)</label>
+                            <input type="text" required placeholder="तपाईंको घर नम्बर वा टोलको नाम" class="w-full px-5 py-4 md:px-6 md:py-5 rounded-xl md:rounded-2xl border-2 border-gray-100 focus:border-burnt-orange focus:bg-white bg-gray-50 transition-all outline-none text-lg md:text-xl font-bold">
                         </div>
                     </div>
 
-                    <div class="pt-6">
-                        <button type="submit" class="w-full bg-burnt-orange text-white py-6 rounded-2xl font-black text-3xl hover:bg-orange-700 shadow-[0_15px_50px_rgba(230,81,0,0.4)] hover:-translate-y-2 transition-all flex items-center justify-center gap-4 group">
+                    <div class="pt-4 md:pt-6">
+                        <button type="submit" class="w-full bg-burnt-orange text-white py-5 md:py-6 rounded-xl md:rounded-2xl font-black text-2xl md:text-3xl hover:bg-orange-700 shadow-[0_15px_50px_rgba(230,81,0,0.4)] hover:-translate-y-1 transition-all flex items-center justify-center gap-4 group">
                             अर्डर कन्फर्म गर्नुहोस्
-                            <svg class="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <svg class="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </button>
-                        <p class="text-center text-sm text-gray-400 mt-8 font-black uppercase tracking-widest">३० दिनको पैसा फिर्ता हुने ग्यारेन्टी</p>
+                        <p class="text-center text-[10px] md:text-sm text-gray-400 mt-6 md:mt-8 font-black uppercase tracking-widest">३० दिनको पैसा फिर्ता हुने ग्यारेन्टी</p>
                     </div>
                 </form>
             </div>
 
-            <div class="space-y-10">
-                <div class="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border-4 border-white shadow-xl space-y-6">
-                    <div class="flex gap-2">
-                        <svg class="w-8 h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-8 h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-8 h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-8 h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-8 h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <div class="space-y-8 md:space-y-10 order-1 md:order-2">
+                <div class="bg-white/80 backdrop-blur-md p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 md:border-4 border-white shadow-xl space-y-4 md:space-y-6 text-center md:text-left">
+                    <div class="flex gap-1 md:gap-2 justify-center md:justify-start">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-rich-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-1.203 1.797-1.902 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.699.679-2.202-.197-1.902-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     </div>
-                    <p class="text-2xl font-black italic leading-relaxed">"मैले कयौं औषधि र तेल लगाएँ, तर सिल्भर ६ जस्तो राहत कतै पाइन। अहिले म बिना सहारा घरबाहिर हिँड्न सक्छु।"</p>
-                    <p class="text-gray-500 font-black text-lg">— बुद्धिराज थापा, ७२ वर्ष, पोखरा</p>
+                    <p class="text-xl md:text-2xl font-black italic leading-relaxed text-gray-800">"मैले कयौं औषधि र तेल लगाएँ, तर सिल्भर ६ जस्तो राहत कतै पाइन। अहिले म बिना सहारा घरबाहिर हिँड्न सक्छु।"</p>
+                    <p class="text-gray-500 font-black text-base md:text-lg">— बुद्धिराज थापा, ७२ वर्ष, पोखरा</p>
                 </div>
 
-                <div class="flex gap-6">
-                    <div class="flex-1 bg-white p-8 rounded-3xl text-center shadow-lg border-2 border-orange-50">
-                        <div class="bg-green-100 p-4 rounded-2xl inline-block mb-4">
-                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                    <div class="flex-1 bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl text-center shadow-lg border-2 border-orange-50">
+                        <div class="bg-green-100 p-3 md:p-4 rounded-xl inline-block mb-3 md:mb-4">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </div>
-                        <p class="font-black text-gray-700 text-sm uppercase tracking-widest">१००% सुरक्षित</p>
+                        <p class="font-black text-gray-700 text-xs md:text-sm uppercase tracking-widest">१००% सुरक्षित</p>
                     </div>
-                    <div class="flex-1 bg-white p-8 rounded-3xl text-center shadow-lg border-2 border-orange-50">
-                        <div class="bg-orange-100 p-4 rounded-2xl inline-block mb-4">
-                            <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div class="flex-1 bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl text-center shadow-lg border-2 border-orange-50">
+                        <div class="bg-orange-100 p-3 md:p-4 rounded-xl inline-block mb-3 md:mb-4">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
-                        <p class="font-black text-gray-700 text-sm uppercase tracking-widest">निःशुल्क डेलिभरी</p>
+                        <p class="font-black text-gray-700 text-xs md:text-sm uppercase tracking-widest">निःशुल्क डेलिभरी</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-     <!-- Simplified Footer -->
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col gap-4 items-end">
+        <a href="tel:9800000000" class="group flex items-center">
+            <span class="mr-3 bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">हामीलाई कल गर्नुहोस्</span>
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-burnt-orange text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.8-3.9-9-9-9v2c3.9 0 7 3.1 7 7zm-4 0h2c0-2.8-2.2-5-5-5v2c1.7 0 3 1.3 3 3z"/></svg>
+            </div>
+        </a>
+        <a href="https://wa.me/9779800000000" class="group flex items-center">
+            <span class="mr-3 bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">ह्वाट्सएपमा कुरा गर्नुहोस्</span>
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-whatsapp-float">
+                <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.131c1.53.914 3.37 1.398 5.245 1.399h.005c5.455 0 9.893-4.438 9.895-9.895.001-2.645-1.03-5.132-2.903-7.005-1.873-1.873-4.359-2.903-7.004-2.903-5.454 0-9.893 4.438-9.895 9.895-.001 1.962.587 3.878 1.696 5.511l-1.01 3.693 3.784-.993z"/></svg>
+            </div>
+        </a>
+    </div>
+
     <footer class="bg-burnt-orange text-white py-10 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
             <div class="flex items-center gap-2">
                 <div class="bg-white/20 p-1.5 rounded-lg">
                     <svg class="text-white w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.98 7.98 0 01-2.343 5.657z"></path></svg>
                 </div>
                 <span class="text-xl font-black tracking-tighter">SILVER<span class="text-rich-gold">6</span></span>
             </div>
-            
-            <p class="text-sm font-medium opacity-80">© २०२६ सिल्भर ६ हेल्थ। सबै अधिकार सुरक्षित।</p>
-            
+            <p class="text-sm font-medium opacity-80 text-center md:text-left">© २०२६ सिल्भर ६ हेल्थ। सबै अधिकार सुरक्षित।</p>
             <div class="flex gap-6 text-sm font-bold opacity-80">
                 <a href="#" class="hover:underline">गोपनीयता नीति</a>
                 <a href="#" class="hover:underline">नियम र सर्तहरू</a>
             </div>
         </div>
     </footer>
-
 
     <script>
         function toggleFaq(button) {
@@ -365,45 +373,43 @@
         }
 
         async function handleOrder() {
-    const btn = document.querySelector('#orderForm button');
-    const formElement = document.getElementById('orderForm');
-    
-    // Get form values
-    const name = formElement.querySelectorAll('input')[0].value;
-    const phone = formElement.querySelectorAll('input')[1].value;
-    const address = formElement.querySelectorAll('input')[2].value;
+            const btn = document.querySelector('#orderForm button');
+            const formElement = document.getElementById('orderForm');
+            
+            const inputs = formElement.querySelectorAll('input');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const address = inputs[2].value;
 
-    btn.innerHTML = 'कृपया पर्खनुहोस्...';
-    btn.disabled = true;
+            btn.innerHTML = 'कृपया पर्खनुहोस्...';
+            btn.disabled = true;
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyKJ1c5z7Lfdg5uW5WFolkNYvAllG1IsamgnnDx2cpbvoToNolRhdizNmqaI_2AH1a6/exec'; // PASTE YOUR URL HERE
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyKJ1c5z7Lfdg5uW5WFolkNYvAllG1IsamgnnDx2cpbvoToNolRhdizNmqaI_2AH1a6/exec';
 
-    try {
-        await fetch(scriptURL, {
-            method: 'POST',
-            mode: 'no-cors', // Important for Google Script
-            cache: 'no-cache',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, phone, address })
-        });
+            try {
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, address })
+                });
 
-        // Show Success Message
-        formElement.innerHTML = `
-            <div class="text-center py-20 space-y-6">
-                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                    <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                <h2 class="text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
-                <p class="text-xl text-gray-600">हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
-            </div>
-        `;
-    } catch (error) {
-        alert('माफ गर्नुहोला, केहि समस्या आयो। कृपया फेरि प्रयास गर्नुहोस्।');
-        btn.disabled = false;
-        btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
-    }
-}
-
+                formElement.innerHTML = `
+                    <div class="text-center py-10 md:py-20 space-y-6">
+                        <div class="w-16 h-16 md:w-24 md:h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
+                            <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
+                        <p class="text-lg md:text-xl text-gray-600">हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
+                    </div>
+                `;
+            } catch (error) {
+                alert('माफ गर्नुहोला, केहि समस्या आयो। कृपया फेरि प्रयास गर्नुहोस्।');
+                btn.disabled = false;
+                btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
+            }
+        }
     </script>
 </body>
 </html>
