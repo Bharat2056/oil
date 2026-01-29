@@ -364,26 +364,46 @@
             if (!isActive) item.classList.add('active');
         }
 
-        function handleOrder() {
-            const btn = document.querySelector('#orderForm button');
-            btn.innerHTML = 'कृपया पर्खनुहोस्...';
-            btn.disabled = true;
-            btn.style.opacity = '0.7';
+        async function handleOrder() {
+    const btn = document.querySelector('#orderForm button');
+    const formElement = document.getElementById('orderForm');
+    
+    // Get form values
+    const name = formElement.querySelectorAll('input')[0].value;
+    const phone = formElement.querySelectorAll('input')[1].value;
+    const address = formElement.querySelectorAll('input')[2].value;
 
-            setTimeout(() => {
-                const form = document.getElementById('orderForm');
-                form.innerHTML = `
-                    <div class="text-center py-20 space-y-6">
-                        <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                            <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h2 class="text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
-                        <p class="text-xl text-gray-600">धन्यवाद! तपाईंको सिल्भर ६ तयार हुँदैछ। हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
-                        <button onclick="location.reload()" class="text-burnt-orange font-bold text-lg hover:underline">अर्को अर्डर गर्नुहोस्</button>
-                    </div>
-                `;
-            }, 2000);
-        }
+    btn.innerHTML = 'कृपया पर्खनुहोस्...';
+    btn.disabled = true;
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyKJ1c5z7Lfdg5uW5WFolkNYvAllG1IsamgnnDx2cpbvoToNolRhdizNmqaI_2AH1a6/exec'; // PASTE YOUR URL HERE
+
+    try {
+        await fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors', // Important for Google Script
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, address })
+        });
+
+        // Show Success Message
+        formElement.innerHTML = `
+            <div class="text-center py-20 space-y-6">
+                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
+                    <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
+                <p class="text-xl text-gray-600">हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
+            </div>
+        `;
+    } catch (error) {
+        alert('माफ गर्नुहोला, केहि समस्या आयो। कृपया फेरि प्रयास गर्नुहोस्।');
+        btn.disabled = false;
+        btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
+    }
+}
+
     </script>
 </body>
 </html>
