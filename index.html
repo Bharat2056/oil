@@ -364,7 +364,7 @@
         </div>
     </footer>
 
-    <script>
+    <!-- <script>
         function toggleFaq(button) {
             const item = button.parentElement;
             const isActive = item.classList.contains('active');
@@ -410,6 +410,61 @@
                 btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
             }
         }
+    </script> -->
+
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        async function handleOrder() {
+            const btn = document.querySelector('#orderForm button');
+            const formElement = document.getElementById('orderForm');
+            
+            const inputs = formElement.querySelectorAll('input');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const address = inputs[2].value;
+
+            btn.innerHTML = 'कृपया पर्खनुहोस्...';
+            btn.disabled = true;
+
+            // USE THE SAME WEB APP URL AS WEBSITE 1
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxwsst6S0uaTWS9uWaPAlgiwZGhpx049B-nCMxwj4SvB7UrurMve5FI3SsQN9Y315r9xg/exec';
+
+            try {
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        website: 'silver6_oil', // ADD THIS LINE
+                        name: name, 
+                        phone: phone, 
+                        address: address 
+                    })
+                });
+
+                formElement.innerHTML = `
+                    <div class="text-center py-10 md:py-20 space-y-6">
+                        <div class="w-16 h-16 md:w-24 md:h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
+                            <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
+                        <p class="text-lg md:text-xl text-gray-600">हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
+                    </div>
+                `;
+            } catch (error) {
+                alert('माफ गर्नुहोला, केहि समस्या आयो। कृपया फेरि प्रयास गर्नुहोस्।');
+                btn.disabled = false;
+                btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
+            }
+        }
     </script>
+    
 </body>
 </html>
