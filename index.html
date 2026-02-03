@@ -104,10 +104,6 @@
                 <div class="img-card relative bg-orange-200 aspect-[4/5] max-w-[400px] mx-auto md:max-w-none">
                     <img src="img/heroimg.webp" alt="Silver6 Product" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-2xl border-2 md:border-4 border-orange-500 max-w-[140px] md:max-w-[200px] text-center rotate-3 z-10">
-                    <p class="text-[10px] md:text-xs font-black text-gray-400 uppercase">बचत गर्नुहोस्</p>
-                    <p class="text-xl md:text-3xl font-black text-burnt-orange">२०% छुट</p>
-                </div>
             </div>
         </div>
     </section>
@@ -364,54 +360,6 @@
         </div>
     </footer>
 
-    <!-- <script>
-        function toggleFaq(button) {
-            const item = button.parentElement;
-            const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
-        }
-
-        async function handleOrder() {
-            const btn = document.querySelector('#orderForm button');
-            const formElement = document.getElementById('orderForm');
-            
-            const inputs = formElement.querySelectorAll('input');
-            const name = inputs[0].value;
-            const phone = inputs[1].value;
-            const address = inputs[2].value;
-
-            btn.innerHTML = 'कृपया पर्खनुहोस्...';
-            btn.disabled = true;
-
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyKJ1c5z7Lfdg5uW5WFolkNYvAllG1IsamgnnDx2cpbvoToNolRhdizNmqaI_2AH1a6/exec';
-
-            try {
-                await fetch(scriptURL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    cache: 'no-cache',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, phone, address })
-                });
-
-                formElement.innerHTML = `
-                    <div class="text-center py-10 md:py-20 space-y-6">
-                        <div class="w-16 h-16 md:w-24 md:h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                            <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h2 class="text-3xl md:text-4xl font-black text-gray-900">अर्डर सफल भयो!</h2>
-                        <p class="text-lg md:text-xl text-gray-600">हाम्रो टिमले तपाईंलाई छिट्टै फोन गर्नेछ।</p>
-                    </div>
-                `;
-            } catch (error) {
-                alert('माफ गर्नुहोला, केहि समस्या आयो। कृपया फेरि प्रयास गर्नुहोस्।');
-                btn.disabled = false;
-                btn.innerHTML = 'अर्डर कन्फर्म गर्नुहोस्';
-            }
-        }
-    </script> -->
-
     <script>
         function toggleFaq(button) {
             const item = button.parentElement;
@@ -432,7 +380,6 @@
             btn.innerHTML = 'कृपया पर्खनुहोस्...';
             btn.disabled = true;
 
-            // USE THE SAME WEB APP URL AS WEBSITE 1
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxwsst6S0uaTWS9uWaPAlgiwZGhpx049B-nCMxwj4SvB7UrurMve5FI3SsQN9Y315r9xg/exec';
 
             try {
@@ -442,7 +389,7 @@
                     cache: 'no-cache',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
-                        website: 'silver6_oil', // ADD THIS LINE
+                        website: 'silver6_oil',
                         name: name, 
                         phone: phone, 
                         address: address 
